@@ -4,7 +4,7 @@ import streamlit as st
 from streamlit_searchbox import st_searchbox
 from matplotlib.colors import to_rgba, rgb_to_hsv
 import matplotlib.colors as mcolors
-from chart import FlexibleSentimentAnalyzer
+from visualize.chart import FlexibleSentimentAnalyzer
 import matplotlib.pyplot as plt
 import time
 import random

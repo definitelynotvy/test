@@ -4,7 +4,7 @@ import streamlit as st
 from streamlit_searchbox import st_searchbox
 from matplotlib.colors import to_rgba, rgb_to_hsv
 import matplotlib.colors as mcolors
-from visualize.chart import FlexibleSentimentAnalyzer
+from visualize.chart import FlexibleSentimentAnalyzer, load_json_data
 import matplotlib.pyplot as plt
 import time
 import random
@@ -42,7 +42,7 @@ def show_prediction_progress_bar():
     progress_bar = st.progress(0)
     status_text = st.empty()
     
-    duration = random.uniform(12, 18)
+    duration = random.uniform(6, 8)
     start_time = time.time()
     
     while time.time() - start_time < duration:
@@ -60,13 +60,57 @@ def search_function(query):
 
 # Define a callback function to process the selected suggestion
 def analyze_product(product):
-    if product == "iPhone 16":
+    if "iphone 15 plus" in product.lower():
         # Create a placeholder for the chart
-        show_progress_bar()
+        show_progress_bar(x=3, y=4)
+        # Generate the chart
+        show_prediction_progress_bar()
+        visualize_sentiment_analysis_streamlit(data_path='visualize/data/iphone_reviews/iPhone_15_Plus_reviews.json') 
+        return f"Analyzing reviews for: {product}"
+    elif "iphone 15 pro max" in product.lower():
+        # Create a placeholder for the chart
+        show_progress_bar(x=3, y=4)
+        # Generate the chart
+        show_prediction_progress_bar()
+        visualize_sentiment_analysis_streamlit(data_path='visualize/data/iphone_reviews/iPhone_15_Pro_Max_reviews.json')
+        return f"Analyzing reviews for: {product}"
+    elif "iphone 15 pro" in product.lower():
+        # Create a placeholder for the chart
+        show_progress_bar(x=3, y=4)
+        # Generate the chart
+        show_prediction_progress_bar()
+        visualize_sentiment_analysis_streamlit(data_path='visualize/data/iphone_reviews/iPhone_15_Pro_reviews.json')
+        return f"Analyzing reviews for: {product}"
+    elif "iphone 15" in product.lower():
+        # Create a placeholder for the chart
+        show_progress_bar(x=3, y=4)
+        # Generate the chart
+        show_prediction_progress_bar()
+        visualize_sentiment_analysis_streamlit(data_path='visualize/data/iphone_reviews/iPhone_15_reviews.json')
+        return f"Analyzing reviews for: {product}"
+    elif "iphone 16" in product.lower():
+        # Create a placeholder for the chart
+        show_progress_bar(x=3, y=4)
+        # Generate the chart
+        show_prediction_progress_bar()
+        name = random.choice(["_Pro", "_Pro_Max", "_Plus", ""])
+        visualize_sentiment_analysis_streamlit(data_path=f'visualize/data/iphone_reviews/iPhone_16{name}_reviews.json')
+        return f"Analyzing reviews for: {product}"
+    elif "samsung" in product.lower():
+        # Create a placeholder for the chart
+        show_progress_bar(x=3, y=4)
+        # Generate the chart
+        show_prediction_progress_bar()
+        name = random.choice(["S24", "S24_Ultra", "S24+", "Z_Flip5", "Z_Fold5"])
+        visualize_sentiment_analysis_streamlit(data_path='visualize/data/samsung_reviews/SamSung_Galaxy_{name}_reviews.json')
+        
+        return f"Analyzing reviews for: {product}"
+    elif "xiaomi" in product.lower() or "oppo" in product.lower() or "oneplus" in product.lower():
+        # Create a placeholder for the chart
+        show_progress_bar(x=3, y=4)
         # Generate the chart
         show_prediction_progress_bar()
         visualize_sentiment_analysis_streamlit()
-        
         
         return f"Analyzing reviews for: {product}"
     else:
@@ -84,13 +128,16 @@ selected_product = st_searchbox(
     placeholder="Type to search..."
 )
 
-def visualize_sentiment_analysis_streamlit():
+def visualize_sentiment_analysis_streamlit(data_path=None):
     """
     Visualize sentiment analysis results in a Streamlit app using matplotlib
     """
     # Create analyzer and get results
     analyzer = FlexibleSentimentAnalyzer()
-    results = analyzer.analyze_comments()
+    if data_path is not None:
+        results = load_json_data(data_path)
+    else:
+        results = analyzer.analyze_comments()
     
     # Extract aspect summaries
     aspect_summaries = results['aspect_summaries']

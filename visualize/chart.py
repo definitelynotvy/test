@@ -58,7 +58,7 @@ class FlexibleSentimentAnalyzer:
             return None
         
         sentiments = ['Positive', 'Negative', 'Neutral']
-        weights = [0.52, 0.23, 0.25]  # Slightly adjusted distribution
+        weights = [0.52, 0.2, 0.28]  # Slightly adjusted distribution
         return random.choices(sentiments, weights=weights)[0]
     
     def analyze_comments(self):
@@ -144,15 +144,25 @@ class FlexibleSentimentAnalyzer:
 
 
 
+def load_json_data(path):
+    import json
+    
+    with open(path, 'r') as file:
+        data = json.load(file)
+    return data
+
+# Usage example:
+# json_data = load_json_data()
 
 def visualize_sentiment_analysis():
     """
     Visualize sentiment analysis results using matplotlib
     """
     # Create analyzer and get results
-    analyzer = FlexibleSentimentAnalyzer()
-    results = analyzer.analyze_comments()
-    
+    # analyzer = FlexibleSentimentAnalyzer()
+    # results = analyzer.analyze_comments()
+    # print(results)
+    results = load_json_data('visualize/iphone16.json')
     # Extract aspect summaries
     aspect_summaries = results['aspect_summaries']
 

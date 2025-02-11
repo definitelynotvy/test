@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+Airflow-Docker/
 # C extensions
 *.so
 .vscode/

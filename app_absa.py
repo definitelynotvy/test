@@ -101,8 +101,8 @@ def analyze_product(product):
         show_progress_bar(x=3, y=4)
         # Generate the chart
         show_prediction_progress_bar()
-        name = random.choice(["S24", "S24_Ultra", "S24+", "Z_Flip5", "Z_Fold5"])
-        visualize_sentiment_analysis_streamlit(data_path='visualize/data/samsung_reviews/SamSung_Galaxy_{name}_reviews.json')
+        ss = random.choice(["S24", "S24_Ultra", "S24+", "Z_Flip5", "Z_Fold5"])
+        visualize_sentiment_analysis_streamlit(data_path=f'visualize/data/samsung_reviews/SamSung_Galaxy_{ss}_reviews.json')
         
         return f"Analyzing reviews for: {product}"
     elif "xiaomi" in product.lower() or "oppo" in product.lower() or "oneplus" in product.lower():

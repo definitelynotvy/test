@@ -1,0 +1,98 @@
+{
+    "total_comments": 94,
+    "overall_summary": {
+        "Positive": 62,
+        "Negative": 17,
+        "Neutral": 15
+    },
+    "aspect_summaries": {
+        "SCREEN": {
+            "Positive": 16,
+            "Negative": 9,
+            "Neutral": 3,
+            "missing_sentiment": 0,
+            "total_mentions": 28,
+            "positive_percentage": 57.14,
+            "negative_percentage": 32.14,
+            "neutral_percentage": 10.71,
+            "missing_sentiment_percentage": 0.0
+        },
+        "CAMERA": {
+            "Positive": 34,
+            "Negative": 3,
+            "Neutral": 1,
+            "missing_sentiment": 0,
+            "total_mentions": 38,
+            "positive_percentage": 89.47,
+            "negative_percentage": 7.89,
+            "neutral_percentage": 2.63,
+            "missing_sentiment_percentage": 0.0
+        },
+        "BATTERY": {
+            "Positive": 20,
+            "Negative": 3,
+            "Neutral": 3,
+            "missing_sentiment": 2,
+            "total_mentions": 26,
+            "positive_percentage": 76.92,
+            "negative_percentage": 11.54,
+            "neutral_percentage": 11.54,
+            "missing_sentiment_percentage": 7.69
+        },
+        "PERFORMANCE": {
+            "Positive": 16,
+            "Negative": 1,
+            "Neutral": 14,
+            "missing_sentiment": 0,
+            "total_mentions": 31,
+            "positive_percentage": 51.61,
+            "negative_percentage": 3.23,
+            "neutral_percentage": 45.16,
+            "missing_sentiment_percentage": 0.0
+        },
+        "DESIGN": {
+            "Positive": 20,
+            "Negative": 0,
+            "Neutral": 0,
+            "missing_sentiment": 0,
+            "total_mentions": 20,
+            "positive_percentage": 100.0,
+            "negative_percentage": 0.0,
+            "neutral_percentage": 0.0,
+            "missing_sentiment_percentage": 0.0
+        },
+        "PRICE": {
+            "Positive": 38,
+            "Negative": 0,
+            "Neutral": 1,
+            "missing_sentiment": 0,
+            "total_mentions": 39,
+            "positive_percentage": 97.44,
+            "negative_percentage": 0.0,
+            "neutral_percentage": 2.56,
+            "missing_sentiment_percentage": 0.0
+        },
+        "FEATURES": {
+            "Positive": 22,
+            "Negative": 12,
+            "Neutral": 3,
+            "missing_sentiment": 0,
+            "total_mentions": 37,
+            "positive_percentage": 59.46,
+            "negative_percentage": 32.43,
+            "neutral_percentage": 8.11,
+            "missing_sentiment_percentage": 0.0
+        },
+        "GENERAL": {
+            "Positive": 43,
+            "Negative": 0,
+            "Neutral": 0,
+            "missing_sentiment": 0,
+            "total_mentions": 43,
+            "positive_percentage": 100.0,
+            "negative_percentage": 0.0,
+            "neutral_percentage": 0.0,
+            "missing_sentiment_percentage": 0.0
+        }
+    }
+}

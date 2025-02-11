@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import time
 import random
 from suggesions.phones import products
-
+import numpy as np
 # Title of the app
 st.title("Analysis of Smartphone Product Reviews on E-commerce Platforms")
 
@@ -93,7 +93,9 @@ def analyze_product(product):
         show_progress_bar(x=3, y=4)
         # Generate the chart
         show_prediction_progress_bar()
-        name = random.choice(["_Pro", "_Pro_Max", "_Plus", ""])
+        
+        name = np.random.choice(["_Pro", "_Pro_Max", "_Plus", ""])
+        print(name)
         visualize_sentiment_analysis_streamlit(data_path=f'visualize/data/iphone_reviews/iPhone_16{name}_reviews.json')
         return f"Analyzing reviews for: {product}"
     elif "samsung" in product.lower():
@@ -101,9 +103,10 @@ def analyze_product(product):
         show_progress_bar(x=3, y=4)
         # Generate the chart
         show_prediction_progress_bar()
-        ss = random.choice(["S24", "S24_Ultra", "S24+", "Z_Flip5", "Z_Fold5"])
-        visualize_sentiment_analysis_streamlit(data_path=f'visualize/data/samsung_reviews/Samsung_Galaxy_{ss}_reviews.json')
         
+        ss = np.random.choice(["A34","A54","Note_20_Ultra","S21_FE","S24", "S24_Ultra", "S24+", "Z_Flip5", "Z_Fold5"])
+        print(ss)
+        visualize_sentiment_analysis_streamlit(data_path=f'visualize/data/samsung_reviews/Samsung_Galaxy_{ss}_reviews.json')
         return f"Analyzing reviews for: {product}"
     elif "xiaomi" in product.lower() or "oppo" in product.lower() or "oneplus" in product.lower():
         # Create a placeholder for the chart
